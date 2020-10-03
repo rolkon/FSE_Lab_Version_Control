@@ -12,8 +12,8 @@ class Storage:
         else:
             return None
 
-    def remove(self):
-        pass
+    def remove(self, key):
+        self.data.pop(key, None)
 
     def set(self):
         pass
