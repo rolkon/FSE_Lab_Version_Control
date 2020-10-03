@@ -26,10 +26,10 @@ def test_get():
     assert val is None, "Value for an unexisting key is not None"
 
 def run_tests():
+    test_get()
     test_add()
     test_remove()
     test_set()
-    test_get()
 
 if __name__ == "__main__":
     run_tests()
