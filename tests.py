@@ -11,7 +11,6 @@ def test_set():
     key= 'b'
     value=5 
     val = st.set(key,value)
-    print(st.get(key))
     assert val==5, "Value for the key {} should be  setted, but wasn't".format(key)
     key = 'c' 
     val = st.set(key,value)
