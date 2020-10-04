@@ -12,7 +12,7 @@ def test_set():
     value=5 
     val = st.set(key,value)
     print(st.get(key))
-    assert val is not  None, "Value for the key {} should be  setted, but wasn't".format(key)
+    assert val==5, "Value for the key {} should be  setted, but wasn't".format(key)
     key = 'c' 
     val = st.set(key,value)
     assert val is None,  "Value was setted, but wasn't".format(key)
