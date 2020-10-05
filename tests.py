@@ -4,10 +4,7 @@ def test_add():
     st = Storage({'a':1, 'b':2})
     key = 'c'
     val = 3
-    try:
-        st.add(key, val)
-    except KeyError as identifier:
-        print("Value {} wasn't added to storage".format(val))
+    st.add(key, val)
     assert st.data[key] == val, "Wrong value added for key {}".format(key)
 
 def test_remove():
