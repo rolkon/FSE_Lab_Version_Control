@@ -8,8 +8,15 @@ def test_add():
     assert st.data[key] == val, "Wrong value added for key {}".format(key)
 
 def test_remove():
-    pass
-
+    st = Storage({'a': 1, 'b': 2})
+    key = 'b'
+    st.remove(key)
+    val = st.get(key)
+    assert val is None, "Value for the key {} should have been removed, but wasnt".format(key)
+    key = 'a'
+    val = st.get(key)
+    assert val is not None, "Value for the key {} is None, although it hasn't been removed".format(key) 
+    
 def test_set():
     st = Storage({'a':1, 'b':2})
     key= 'b'
@@ -34,7 +41,6 @@ def run_tests():
     test_add()
     test_remove()
     test_set()
-    
 
 if __name__ == "__main__":
     run_tests()
