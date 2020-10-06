@@ -11,7 +11,14 @@ def test_remove():
     pass
 
 def test_set():
-    pass
+    st = Storage({'a':1, 'b':2})
+    key= 'b'
+    value=5 
+    val = st.set(key,value)
+    assert val==5, "Value for the key {} should be  setted, but wasn't".format(key)
+    key = 'c' 
+    val = st.set(key,value)
+    assert val is None,  "Value was setted, but wasn't".format(key)
 
 def test_get():
     st = Storage({'a': 1, 'b': 2})
@@ -23,10 +30,11 @@ def test_get():
     assert val is None, "Value for an unexisting key is not None"
 
 def run_tests():
+    test_get()
     test_add()
     test_remove()
     test_set()
-    test_get()
+    
 
 if __name__ == "__main__":
     run_tests()
